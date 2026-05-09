@@ -1,239 +1,109 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Denva Storybook Portfolio</title>
 
-<title>Denva Beaubrun — Developer Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<nav>
-  <a href="#" class="nav-logo">Denva's portfolio</a>
+<div class="book">
 
-  <ul class="nav-links">
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+  <!-- LEFT PAGE -->
 
-<div class="hero">
+  <div class="page left-page">
 
-  <p class="hero-eyebrow">Open to opportunities</p>
+    <div class="sticker star1">⭐</div>
+    <div class="sticker star2">🪐</div>
+    <div class="sticker flower">🌸</div>
 
-  <h1>
-    Denva<br>
-    <em>Beaubrun</em>
-  </h1>
+    <p class="chapter">Chapter One</p>
 
-  <p class="hero-sub">
-    Front-end developer building clean, functional web experiences.
-    Passionate about design and code working together.
-  </p>
+    <h1>
+      Denva<br>
+      Beaubrun
+    </h1>
 
-  <div class="hero-cta">
+    <p class="intro">
+      Multimedia developer creating interactive,
+      story-driven web experiences that blend
+      design, animation, and frontend development.
+    </p>
 
-    <a href="https://github.com/denvabeaubrun"
-       class="btn-primary"
-       target="_blank">
+    <div class="about-card">
 
-       GitHub Profile
+      <h3>Currently Exploring</h3>
 
-    </a>
+      <p>
+        Creative frontend design, immersive UI,
+        multimedia storytelling, and responsive web apps.
+      </p>
 
-    <a href="#projects"
-       class="btn-secondary">
+      <div class="skills">
+        <span class="skill">HTML</span>
+        <span class="skill">CSS</span>
+        <span class="skill">JavaScript</span>
+        <span class="skill">Bootstrap</span>
+        <span class="skill">React</span>
+      </div>
 
-       View Projects
+    </div>
 
-    </a>
+  </div>
+
+  <!-- RIGHT PAGE -->
+
+  <div class="page">
+
+    <div class="tape"></div>
+
+    <p class="project-label">Featured Project</p>
+
+    <h2 class="project-title">
+      Planet Sights
+    </h2>
+
+    <p class="project-description">
+      A NASA-inspired Progressive Web App
+      allowing users to explore planets,
+      moons, and black holes through
+      cinematic visuals, audio narration,
+      and interactive educational content.
+    </p>
+
+    <div class="preview">
+
+      <img
+        src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=1200&auto=format&fit=crop"
+        alt="Project Preview"
+      >
+
+    </div>
+
+    <div class="buttons">
+
+      <a href="#" class="btn btn-primary">
+        Launch Project
+      </a>
+
+      <a href="#" class="btn btn-secondary">
+        View Case Study
+      </a>
+
+    </div>
 
   </div>
 
 </div>
 
-<hr class="section-divider">
-
-<section id="projects">
-
-  <p class="section-label">
-    <span>01</span> Selected Work
-  </p>
-
-  <div class="projects-grid">
-
-    <!-- Cartoon -->
-
-    <div class="project-card featured">
-
-      <p class="project-num">001</p>
-
-      <div class="project-tag-row">
-        <span class="tag">HTML / CSS</span>
-        <span class="tag hot">Featured</span>
-      </div>
-
-      <h3>Cartoon Project</h3>
-
-      <p>
-        A CSS-drawn seaside scene featuring a house,
-        ocean, sandy shore, birds, and a sun —
-        all built entirely with HTML and CSS shapes.
-      </p>
-
-      <div class="project-links">
-
-        <a href="https://denvabeaubrun.github.io/cisc3610-portfolio/cartoon-project/"
-           class="project-link"
-           target="_blank">
-
-           Live Demo
-
-        </a>
-
-      </div>
-
-    </div>
-
-    <!-- Words -->
-
-    <div class="project-card">
-
-      <p class="project-num">002</p>
-
-      <div class="project-tag-row">
-        <span class="tag">JavaScript</span>
-      </div>
-
-      <h3>Words Project</h3>
-
-      <p>
-        A Multimedia Dictionary using the Web Speech API
-        to pronounce vocabulary words and display
-        example sentences.
-      </p>
-
-      <div class="project-links">
-
-        <a href="https://denvabeaubrun.github.io/cisc3610-portfolio/words-project/"
-           class="project-link"
-           target="_blank">
-
-           Live Demo
-
-        </a>
-
-      </div>
-
-    </div>
-
-    <!-- Planet Sights -->
-
-    <div class="project-card featured">
-
-      <p class="project-num">003</p>
-
-      <div class="project-tag-row">
-        <span class="tag">PWA</span>
-        <span class="tag">JavaScript</span>
-        <span class="tag hot">Newest</span>
-      </div>
-
-      <h3>Planet Sights</h3>
-
-      <p>
-        A NASA-inspired Progressive Web App that lets
-        users explore planets, moons, and black holes
-        through interactive visuals, fun facts,
-        audio narration, and responsive design.
-      </p>
-
-      <div class="project-links">
-
-        <a href="YOUR-PWA-LINK"
-           class="project-link"
-           target="_blank">
-
-           Live App
-
-        </a>
-
-        <a href="YOUR-PROMO-LINK"
-           class="project-link"
-           target="_blank">
-
-           Promo Page
-
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<hr class="section-divider">
-
-<section id="skills">
-
-  <p class="section-label">
-    <span>02</span> Skills & Tools
-  </p>
-
-  <div class="skills-wrap">
-
-    <span class="skill-pill">HTML5</span>
-    <span class="skill-pill">CSS3</span>
-    <span class="skill-pill">JavaScript</span>
-    <span class="skill-pill">Bootstrap</span>
-    <span class="skill-pill">Responsive Design</span>
-    <span class="skill-pill">Git & GitHub</span>
-    <span class="skill-pill">React</span>
-
-  </div>
-
-</section>
-
-<hr class="section-divider">
-
-<section id="contact">
-
-  <p class="section-label">
-    <span>03</span> Get in Touch
-  </p>
-
-  <div class="contact-row">
-
-    <a href="https://github.com/denvabeaubrun"
-       class="contact-link"
-       target="_blank">
-
-       github.com/denvabeaubrun
-
-    </a>
-
-    <a href="mailto:morebrainpoweruse@gmail.com"
-       class="contact-link">
-
-       morebrainpoweruse@gmail.com
-
-    </a>
-
-  </div>
-
-</section>
-
-<footer>
-  © 2026 Denva Beaubrun — Built with HTML & CSS
-</footer>
-
 </body>
 </html>
+
