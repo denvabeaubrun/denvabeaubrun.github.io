@@ -1,0 +1,379 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+
+  --bg: #D6EAF8;
+
+  --card: #FFFFFF;
+
+  --ink: #0D1B2A;
+
+  --muted: #1A3A5C;
+
+  --accent: #1A6FA8;
+
+  --accent2: #0D4F7A;
+
+  --border: rgba(26,111,168,0.2);
+
+  --tag-bg: #BED9F0;
+
+  --tag-ink: #0D4F7A;
+}
+
+body {
+
+  font-family: 'Outfit', sans-serif;
+
+  background: var(--bg);
+
+  color: var(--ink);
+
+  min-height: 100vh;
+}
+
+/* NAV */
+
+nav {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 1.5rem 3rem;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+
+  font-family: 'DM Mono', monospace;
+
+  font-size: 1rem;
+
+  color: var(--ink);
+
+  text-decoration: none;
+}
+
+.nav-links {
+
+  display: flex;
+
+  gap: 2rem;
+
+  list-style: none;
+}
+
+.nav-links a {
+
+  text-decoration: none;
+
+  color: var(--muted);
+
+  font-size: 0.85rem;
+
+  text-transform: uppercase;
+}
+
+/* HERO */
+
+.hero {
+
+  padding: 5rem 3rem;
+
+  max-width: 900px;
+
+  margin: 0 auto;
+}
+
+.hero-eyebrow {
+
+  font-family: 'DM Mono', monospace;
+
+  color: var(--accent);
+
+  text-transform: uppercase;
+
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+
+  font-family: 'DM Serif Display', serif;
+
+  font-size: clamp(3rem, 6vw, 5.5rem);
+
+  line-height: 1;
+}
+
+.hero h1 em {
+
+  color: var(--accent);
+}
+
+.hero-sub {
+
+  margin-top: 1.5rem;
+
+  line-height: 1.7;
+
+  max-width: 500px;
+
+  color: var(--muted);
+}
+
+.hero-cta {
+
+  display: flex;
+
+  gap: 1rem;
+
+  margin-top: 2rem;
+}
+
+.btn-primary,
+.btn-secondary {
+
+  padding: 0.85rem 1.8rem;
+
+  text-decoration: none;
+
+  border-radius: 4px;
+
+  transition: 0.2s;
+}
+
+.btn-primary {
+
+  background: var(--ink);
+
+  color: white;
+}
+
+.btn-secondary {
+
+  border: 1px solid var(--ink);
+
+  color: var(--ink);
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+
+  transform: translateY(-2px);
+}
+
+/* DIVIDER */
+
+.section-divider {
+
+  border: none;
+
+  border-top: 1px solid var(--border);
+
+  margin: 0 3rem;
+}
+
+/* SECTIONS */
+
+section {
+
+  padding: 4rem 3rem;
+
+  max-width: 1100px;
+
+  margin: 0 auto;
+}
+
+.section-label {
+
+  font-family: 'DM Mono', monospace;
+
+  text-transform: uppercase;
+
+  margin-bottom: 2rem;
+
+  color: var(--muted);
+}
+
+/* PROJECTS */
+
+.projects-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+  gap: 1.5rem;
+}
+
+.project-card {
+
+  background: white;
+
+  border: 1px solid var(--border);
+
+  border-radius: 14px;
+
+  padding: 2rem;
+
+  transition: 0.2s;
+}
+
+.project-card:hover {
+
+  transform: translateY(-4px);
+}
+
+.project-tag-row {
+
+  display: flex;
+
+  gap: 0.5rem;
+
+  flex-wrap: wrap;
+
+  margin-bottom: 1rem;
+}
+
+.tag {
+
+  background: var(--tag-bg);
+
+  color: var(--tag-ink);
+
+  padding: 0.25rem 0.6rem;
+
+  border-radius: 4px;
+
+  font-size: 0.7rem;
+}
+
+.tag.hot {
+
+  background: #FBEAE5;
+
+  color: #993C1D;
+}
+
+.project-card h3 {
+
+  margin-bottom: 0.75rem;
+
+  font-size: 1.5rem;
+}
+
+.project-card p {
+
+  line-height: 1.7;
+
+  color: var(--muted);
+}
+
+.project-links {
+
+  margin-top: 1.5rem;
+
+  display: flex;
+
+  gap: 1rem;
+}
+
+.project-link {
+
+  text-decoration: none;
+
+  color: var(--accent2);
+
+  font-size: 0.85rem;
+}
+
+/* SKILLS */
+
+.skills-wrap {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 0.75rem;
+}
+
+.skill-pill {
+
+  border: 1px solid var(--border);
+
+  padding: 0.5rem 1rem;
+
+  border-radius: 100px;
+}
+
+/* CONTACT */
+
+.contact-row {
+
+  display: flex;
+
+  gap: 2rem;
+
+  flex-wrap: wrap;
+}
+
+.contact-link {
+
+  text-decoration: none;
+
+  color: var(--ink);
+}
+
+/* FOOTER */
+
+footer {
+
+  text-align: center;
+
+  padding: 2rem;
+
+  border-top: 1px solid var(--border);
+
+  color: var(--muted);
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  nav {
+
+    padding: 1rem 1.5rem;
+  }
+
+  .hero {
+
+    padding: 3rem 1.5rem;
+  }
+
+  section {
+
+    padding: 3rem 1.5rem;
+  }
+
+  .section-divider {
+
+    margin: 0 1.5rem;
+  }
+
+  .hero-cta {
+
+    flex-direction: column;
+  }
+}
