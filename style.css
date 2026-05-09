@@ -222,6 +222,9 @@ h1 {
   top: 40px;
   right: 100px;
 }
+.page {
+  padding: 30px 40px;
+}
 
 /* MOBILE */
 @media (max-width: 900px) {
