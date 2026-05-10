@@ -77,13 +77,13 @@ body {
 
     height: 100%;
 
-    width: 34px;
+    width: 50px;
 
     background-size: 9px 12px;
 
     background-image:
       radial-gradient(
-        circle at 5% 40%,
+        circle at center,
         transparent 70%,
         #555 20%
       );
