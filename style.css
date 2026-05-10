@@ -21,7 +21,7 @@ body {
 .book {
   width: 1300px;
   max-width: 100%;
-  min-height: 800px;
+  height: 800px;
   background: #fdfbf5;
   display: grid;
   grid-template-columns: 1fr 1fr;
