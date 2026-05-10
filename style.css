@@ -65,33 +65,44 @@ body {
 
 .book::after {
 
-    position: absolute;
+  content: "";
 
-    content: '';
+  position: absolute;
 
-    top: 0;
+  top: 0;
 
-    left: 50%;
+  left: 50%;
 
-    transform: translateX(-50%);
+  transform: translateX(-50%);
 
-    height: 100%;
+  width: 70px;
 
-    width: 60px;
+  height: 100%;
 
-    background-size: 24px 18px;
+  background-image:
+    repeating-linear-gradient(
+      to bottom,
 
-    background-image:
-      radial-gradient(
-        circle at center,
-        transparent 70%,
-        #555 20%
-      );
+      transparent 0px,
+      transparent 20px,
 
-    background-repeat: repeat-y;
+      #2d2d2d 20px,
+      #2d2d2d 24px,
 
-    z-index: 3;
+      transparent 24px,
+      transparent 44px
+    );
+
+  background-size: 70px 44px;
+
+  background-repeat: repeat-y;
+   border-radius: 999px;
+
+  z-index: 5;
+
+  pointer-events: none;
 }
+
 .page {
   padding: 30px 90px;
   position: relative;
