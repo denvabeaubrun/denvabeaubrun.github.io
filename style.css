@@ -96,7 +96,8 @@ font-size: 1.15rem;
   line-height: 1.9;
   color: #5c4b3f;
   max-width: 420px;
-   white-space: nowrap;
+  white-space: nowrap;
+  margin-top: 25px;
 }
 .contact-info a {
   color: #5b4a3d;
