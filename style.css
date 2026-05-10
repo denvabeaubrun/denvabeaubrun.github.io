@@ -18,83 +18,66 @@ body {
   padding: 40px;
 }
 
-/* BOOK */
+/* BOOK CONTAINER */
+
 .book {
-  width: 1400px;
-  max-width: 100%;
-  min-height: 750px;
-
-  background: #fdfbf5;
-
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-
   position: relative;
-
-  box-shadow:
-    0 30px 60px rgba(0,0,0,0.35),
-    inset 0 0 30px rgba(0,0,0,0.05);
-
-  overflow: hidden;
 }
 
-/* CENTER SPIRAL */
+/* GREEN CENTER SPINE */
+
 .book::before {
-
   content: "";
-
   position: absolute;
-
   top: 0;
-
   left: 50%;
-
   transform: translateX(-50%);
-
   width: 42px;
-
   height: 100%;
-
-  background: rgba(215, 228, 207, 0.95);
-
+  background: #dce8d3;
   border-left: 2px solid rgba(0,0,0,0.08);
-
   border-right: 2px solid rgba(0,0,0,0.08);
-
-  z-index: 2;
+  z-index: 1;
 }
+
+
+/* SPIRAL HOLES */
 
 .book::after {
-
   content: "";
-
   position: absolute;
-
   top: 0;
-
   left: 50%;
-
   transform: translateX(-50%);
-
   width: 42px;
-
   height: 100%;
-
-  background:
-
-    radial-gradient(circle at center,
-      transparent 0px,
-      transparent 7px,
-      #444 7px,
-      #444 9px,
-      transparent 9px
+  
+  background-image:
+    radial-gradient(
+      circle closest-side,
+      #2e2e2e 42%,
+      transparent 43%
     );
-
-  background-size: 42px 34px;
-
+  background-size: 42px 38px;
+  background-position: center 16px;
   background-repeat: repeat-y;
+  z-index: 2;
+  pointer-events: none;
+}
 
-  z-index: 4;
+
+/* SPIRAL WIRE */
+
+.spiral {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 100%;
+  background: #2e2e2e;
+  border-radius: 999px;
+  z-index: 3;
 }
 
 .page {
