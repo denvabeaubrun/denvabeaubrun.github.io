@@ -24,7 +24,6 @@ body {
   max-width: 100%;
   min-height: 800px;
   background: #fdfbf5;
-  border-radius: 10px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   position: relative;
