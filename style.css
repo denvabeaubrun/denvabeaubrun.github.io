@@ -23,16 +23,10 @@ body {
   width: 1200px;
   max-width: 100%;
   min-height: 750px;
-
   background: #fdfbf5;
-
-  border-radius: 10px;
-
   display: grid;
   grid-template-columns: 1fr 1fr;
-
   position: relative;
-
   box-shadow:
     0 30px 60px rgba(0,0,0,0.35),
     inset 0 0 30px rgba(0,0,0,0.05);
@@ -43,17 +37,12 @@ body {
 /* CENTER SPIRAL */
 .book::before {
   content: "";
-
   position: absolute;
-
   top: 0;
   left: 50%;
-
   transform: translateX(-50%);
-
   width: 12px;
   height: 100%;
-
   background:
     repeating-linear-gradient(
       to bottom,
@@ -67,7 +56,7 @@ body {
 }
 
 .page {
-  padding: 70px;
+  padding: 30px 40px;
   position: relative;
 }
 
