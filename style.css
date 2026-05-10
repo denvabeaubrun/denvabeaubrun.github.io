@@ -48,26 +48,40 @@ body {
 }
 
 /* SPIRAL BINDING — vertical tick-mark loops */
+/* SPIRAL BINDING */
+
 .book::after {
+
   content: "";
+
   position: absolute;
+
   top: 0;
+
   left: 50%;
+
   transform: translateX(-50%);
-  width: 14px;
+
+  width: 26px;
+
   height: 100%;
-  background-size: 14px 11px;
+
   background-image:
-    radial-gradient(
-      ellipse 2px 4px at 50% 40%,
-      #1a1a1a 55%,
-      #2e2e2e 70%,
-      transparent 75%
+    repeating-radial-gradient(
+      circle at center,
+      #1e1e1e 0px,
+      #1e1e1e 3px,
+      transparent 4px,
+      transparent 22px
     );
-  background-position: center top;
+
+  background-size: 26px 34px;
+
   background-repeat: repeat-y;
-  z-index: 2;
-  pointer-events: none;
+
+  z-index: 3;
+
+  opacity: 0.9;
 }
 
 .page {
