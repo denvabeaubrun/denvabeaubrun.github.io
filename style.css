@@ -41,27 +41,16 @@ body {
 /* CENTER SPIRAL */
 .book::before {
   content: "";
-
   position: absolute;
-
   top: 0;
   left: 50%;
-
   transform: translateX(-50%);
-
-  width: 12px;
+  width: 40px;
   height: 100%;
-
-  background:
-    repeating-linear-gradient(
-      to bottom,
-      #444 0px,
-      #444 14px,
-      transparent 14px,
-      transparent 28px
-    );
-
-  opacity: 0.7;
+  background: #dce8d3;
+  border-left: 2px solid rgba(0,0,0,0.08);
+  border-right: 2px solid rgba(0,0,0,0.08);
+  z-index: 2;
 }
 
 .page {
