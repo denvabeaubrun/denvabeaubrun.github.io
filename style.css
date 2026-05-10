@@ -84,7 +84,9 @@ body {
   opacity: 0.9;
 }
 
-.left-page { border-right: 1px solid rgba(0,0,0,0.06); }
+.left-page {
+  padding-right: 70px;
+}
 
 .right-page {
   padding-left: 70px;
@@ -97,7 +99,7 @@ body {
   margin-bottom: 20px;
 }
 
-h1 {
+.h1 {
   font-family: 'DM Serif Display', serif;
   font-size: 4.8rem;
   line-height: 0.95;
