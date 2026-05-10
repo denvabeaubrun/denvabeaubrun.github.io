@@ -84,15 +84,13 @@ body {
   opacity: 0.9;
 }
 
-.page {
-  padding: 30px 40px;
-  position: relative;
-}
-
 .left-page {
-  border-right: 1px solid rgba(0,0,0,0.06);
+  padding-right: 70px;
 }
 
+.right-page {
+  padding-left: 70px;
+}
 .chapter {
   font-size: 0.8rem;
   letter-spacing: 0.3em;
