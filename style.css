@@ -162,35 +162,56 @@ h1 {
   margin-bottom: 20px;
 }
 
-.project-description {
+.project-description,
+.promo-description {
+
   color: #5b4a3d;
+
   line-height: 1.9;
+
   margin-bottom: 35px;
+
+  text-align: center;
+
+  max-width: 700px;
+
+  margin-left: auto;
+
+  margin-right: auto;
 }
-.promo-description{
-  color: #5b4a3d;
-  line-height: 3.0;
-}
-.preview {
+
+
+.preview,
+.promo-preview {
+
   width: 100%;
+
   max-width: 100%;
+
   overflow: hidden;
-  margin-bottom: 30px;
+
+  margin-bottom: 40px;
+
   display: flex;
+
   justify-content: center;
 }
 
-.preview img {
+
+.preview img,
+.promo-preview img {
+
   width: 75%;
+
   max-width: 100%;
+
   height: auto;
+
   display: block;
-}
-.promo-preview img{
- width: 75%;
-  max-width: 100%;
-  height: auto;
-  display: block;
+
+  border-radius: 24px;
+
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
 }
 .buttons {
   display: flex;
