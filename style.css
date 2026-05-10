@@ -61,6 +61,8 @@ body {
 .page {
   padding: 30px 70px;
   position: relative;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .left-page {
