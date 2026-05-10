@@ -12,85 +12,69 @@ body {
   background:
     linear-gradient(rgba(0,0,0,0.08), rgba(0,0,0,0.08)),
     #c8965c;
+
   font-family: 'Outfit', sans-serif;
   overflow-x: hidden;
   padding: 40px;
 }
 
-/* BOOK CONTAINER */
+/* BOOK */
 .book {
-  width: 1300px;
+  width: 1200px;
   max-width: 100%;
-  height: 800px;
+  min-height: 750px;
+
   background: #fdfbf5;
+
+  border-radius: 10px;
+
   display: grid;
   grid-template-columns: 1fr 1fr;
+
   position: relative;
-  overflow: hidden;
+
   box-shadow:
     0 30px 60px rgba(0,0,0,0.35),
     inset 0 0 30px rgba(0,0,0,0.05);
+
+  overflow: hidden;
 }
 
-/* GREEN CENTER SPINE */
+/* CENTER SPIRAL */
 .book::before {
   content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 42px;
-  height: 100%;
-  background: #dce8d3;
-  border-left: 2px solid rgba(0,0,0,0.08);
-  border-right: 2px solid rgba(0,0,0,0.08);
-  z-index: 1;
-}
-
-/* SPIRAL BINDING — vertical tick-mark loops */
-/* SPIRAL BINDING */
-
-.book::after {
-
-  content: "";
 
   position: absolute;
 
   top: 0;
-
   left: 50%;
 
   transform: translateX(-50%);
 
-  width: 26px;
-
+  width: 12px;
   height: 100%;
 
-  background-image:
-    repeating-radial-gradient(
-      circle at center,
-      #1e1e1e 0px,
-      #1e1e1e 3px,
-      transparent 4px,
-      transparent 22px
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      #444 0px,
+      #444 14px,
+      transparent 14px,
+      transparent 28px
     );
 
-  background-size: 26px 34px;
+  opacity: 0.7;
+}
 
-  background-repeat: repeat-y;
-
-  z-index: 3;
-
-  opacity: 0.9;
+.page {
+  padding: 70px;
+  position: relative;
 }
 
 .left-page {
-  padding-right: 70px;
+  border-right: 1px solid rgba(0,0,0,0.06);
 }
 
-.right-page {
-  padding-left: 70px;
-}
 .chapter {
   font-size: 0.8rem;
   letter-spacing: 0.3em;
@@ -99,7 +83,7 @@ body {
   margin-bottom: 20px;
 }
 
-.h1 {
+h1 {
   font-family: 'DM Serif Display', serif;
   font-size: 4.8rem;
   line-height: 0.95;
@@ -137,10 +121,15 @@ body {
 
 .about-card {
   margin-top: 50px;
+
   background: rgba(255,255,255,0.7);
+
   border: 1px solid rgba(0,0,0,0.08);
+
   border-radius: 25px;
+
   padding: 25px;
+
   backdrop-filter: blur(10px);
 }
 
@@ -238,24 +227,27 @@ body {
 
 /* MOBILE */
 @media (max-width: 900px) {
+
   .book {
     grid-template-columns: 1fr;
   }
+
   .book::before {
     display: none;
   }
-  .book::after {
-    display: none;
-  }
+
   .page {
     padding: 40px 30px;
   }
+
   h1 {
     font-size: 3.2rem;
   }
+
   .project-title {
     font-size: 2.5rem;
   }
+
 }
 
 
