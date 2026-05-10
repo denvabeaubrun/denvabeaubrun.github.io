@@ -40,39 +40,61 @@ body {
 
 /* CENTER SPIRAL */
 .book::before {
+
   content: "";
+
   position: absolute;
+
   top: 0;
+
   left: 50%;
+
   transform: translateX(-50%);
-  width: 40px;
+
+  width: 42px;
+
   height: 100%;
-  background-color: rgba(215, 228, 207, 0.95);
+
+  background: rgba(215, 228, 207, 0.95);
+
   border-left: 2px solid rgba(0,0,0,0.08);
+
   border-right: 2px solid rgba(0,0,0,0.08);
-  z-index: 3;
+
+  z-index: 2;
 }
 
 .book::after {
+
   content: "";
+
   position: absolute;
+
   top: 0;
+
   left: 50%;
+
   transform: translateX(-50%);
-  width: 40px;
+
+  width: 42px;
+
   height: 100%;
-  background-image:
-    repeating-linear-gradient(
-      to bottom,
+
+  background:
+
+    radial-gradient(circle at center,
       transparent 0px,
-      transparent 18px,
-      #6f6f6f 18px,
-      #6f6f6f 20px,
-      transparent 20px,
-      transparent 42px
+      transparent 7px,
+      #444 7px,
+      #444 9px,
+      transparent 9px
     );
+
+  background-size: 42px 34px;
+
+  background-repeat: repeat-y;
+
   z-index: 4;
-  opacity: 0.9;
 }
 
 .page {
