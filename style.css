@@ -78,6 +78,7 @@ body {
   width: 70px;
 
   height: 100%;
+  filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.35));
 
   background-image:
     repeating-linear-gradient(
