@@ -34,91 +34,54 @@ body {
 
   overflow: hidden;
 }
-.spiral {
-
-  position: absolute;
-
-  top: 0;
-
-  left: 50%;
-
-  transform: translateX(-50%);
-
-  width: 10px;
-
-  height: 100%;
-
-  background: #2e2e2e;
-
-  border-radius: 999px;
-
-  z-index: 3;
-
-  box-shadow:
-    0 0 3px rgba(0,0,0,0.35);
-}
-
-/* CENTER SPIRAL */
+/* GREEN SPINE */
 .book::before {
-
   content: "";
-
   position: absolute;
-
   top: 0;
-
   left: 50%;
-
   transform: translateX(-50%);
-
   width: 48px;
-
   height: 100%;
-
   background: #dce8d3;
-
   border-left: 2px solid rgba(0,0,0,0.08);
-
   border-right: 2px solid rgba(0,0,0,0.08);
-
   z-index: 1;
 }
 
-
-/* ORIGINAL LOOPS */
-
+/* SPIRAL HOLES — circular rings down the spine */
 .book::after {
-
   content: "";
-
   position: absolute;
-
   top: 0;
-
   left: 50%;
-
   transform: translateX(-50%);
-
   width: 48px;
-
   height: 100%;
-
   background-image:
     radial-gradient(
       circle closest-side,
       #333 42%,
       transparent 43%
     );
-
   background-size: 48px 28px;
-
   background-position: center 14px;
-
   background-repeat: repeat-y;
-
   z-index: 2;
-
   pointer-events: none;
+}
+
+/* SPIRAL WIRE — dark line through the rings */
+.spiral {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 100%;
+  background: #2e2e2e;
+  border-radius: 3px;
+  z-index: 3;
 }
 .page {
   padding: 30px 90px;
