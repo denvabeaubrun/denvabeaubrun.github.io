@@ -19,7 +19,37 @@ body {
 }
 
 /* BOOK CONTAINER */
-/* SPIRAL HOLES — now metallic black rings */
+.book {
+  width: 1300px;
+  max-width: 100%;
+  min-height: 800px;
+  background: #fdfbf5;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  overflow: hidden;
+  box-shadow:
+    0 30px 60px rgba(0,0,0,0.35),
+    inset 0 0 30px rgba(0,0,0,0.05);
+}
+
+/* GREEN CENTER SPINE */
+.book::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 42px;
+  height: 100%;
+  background: #dce8d3;
+  border-left: 2px solid rgba(0,0,0,0.08);
+  border-right: 2px solid rgba(0,0,0,0.08);
+  z-index: 1;
+}
+
+/* SPIRAL HOLES — metallic black rings */
 .book::after {
   content: "";
   position: absolute;
@@ -28,16 +58,13 @@ body {
   transform: translateX(-50%);
   width: 42px;
   height: 100%;
-
   background-image:
-    /* inner hole shadow (darkest center) */
     radial-gradient(
       ellipse 8px 6px at center,
       #000 0%,
       #0a0a0a 60%,
       transparent 65%
     ),
-    /* metallic ring with diagonal sheen */
     radial-gradient(
       ellipse 16px 13px at 45% 40%,
       #6a6a6a 0%,
@@ -75,7 +102,6 @@ body {
     inset 0 0 4px rgba(0,0,0,0.8),
     0 0 6px rgba(0,0,0,0.4);
 }
-
 .page {
   padding: 30px 40px;
   position: relative;
