@@ -71,18 +71,6 @@ body {
   pointer-events: none;
 }
 
-/* SPIRAL WIRE — dark line through the rings */
-.spiral {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 6px;
-  height: 100%;
-  background: #2e2e2e;
-  border-radius: 3px;
-  z-index: 3;
-}
 .page {
   padding: 30px 90px;
   position: relative;
