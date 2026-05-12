@@ -542,3 +542,48 @@ font-size: 1.15rem;
 .tape-blue{
   background:rgba(173,216,230,0.7);
 }
+header{
+  position:fixed;
+  top:20px;
+  left:50%;
+  transform:translateX(-50%);
+
+  width:90%;
+  max-width:1400px;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:18px 30px;
+
+  background:rgba(255,255,255,0.55);
+
+  backdrop-filter:blur(12px);
+
+  border-radius:999px;
+
+  z-index:1000;
+}
+
+.logo{
+  font-family:'DM Serif Display', serif;
+  font-size:1.5rem;
+  color:#2f241d;
+}
+
+nav{
+  display:flex;
+  gap:25px;
+}
+
+nav a{
+  text-decoration:none;
+  color:#5c4b3f;
+  font-weight:500;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#000;
+}
