@@ -420,7 +420,6 @@ font-size: 1.15rem;
 .project-card{
   background:rgba(255,255,255,0.75);
   border:1px solid rgba(0,0,0,0.08);
-  border-radius:24px;
   padding:22px;
   backdrop-filter:blur(10px);
   transition:0.3s;
@@ -481,4 +480,23 @@ font-size: 1.15rem;
   object-fit:cover;
   border-radius:16px;
   margin-bottom:15px;
+}
+.project-links{
+  display:flex;
+  gap:12px;
+  margin-top:18px;
+}
+
+.project-links a{
+  text-decoration:none;
+  padding:10px 16px;
+  border-radius:999px;
+  background:#3d2d23;
+  color:white;
+  font-size:0.85rem;
+  transition:0.3s;
+}
+
+.project-links a:hover{
+  transform:translateY(-3px);
 }
