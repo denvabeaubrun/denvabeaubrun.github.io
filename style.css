@@ -536,10 +536,9 @@ font-size: 1.15rem;
 .tape3{
   transform:translateX(-50%) rotate(-8deg);
 }
-.tape-yellow{
-  background:rgba(255,240,180,0.7);
+.tape-lavender{
+  background:rgba(210,190,255,0.7);
 }
-
 .tape-pink{
   background:rgba(255,182,193,0.7);
 }
