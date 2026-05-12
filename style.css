@@ -475,4 +475,10 @@ font-size: 1.15rem;
   color:#3d2d23;
   font-weight:600;
 }
-
+.project-card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:16px;
+  margin-bottom:15px;
+}
