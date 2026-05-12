@@ -515,7 +515,7 @@ font-size: 1.15rem;
 
 .tape{
   position:absolute;
-  top:-40px;
+  top:-38px;
   left:50%;
   transform:translateX(-50%) rotate(-5deg);
 
