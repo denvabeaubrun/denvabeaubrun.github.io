@@ -296,7 +296,7 @@ font-size: 1.15rem;
   left:49%;
   transform:translateX(-50%);
   width:180px;
-  height:100%;
+  height:99%;
   background-image:url("binder-copy.png");
   background-repeat:repeat-y;
   background-size:contain;
