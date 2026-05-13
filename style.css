@@ -418,8 +418,11 @@ font-size: 1.15rem;
   .left-page,
   .right-page{
     padding:40px 30px;
+    .binder{
+      display:none;
+    }
   }
-
+}
   .projects-grid{
     grid-template-columns:1fr;
   }
