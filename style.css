@@ -426,8 +426,27 @@ font-size: 1.15rem;
   .title{
     font-size:3rem;
   }
+  @media(max-width:900px){
+
+  .left-page,
+  .right-page{
+    padding:40px 30px;
+  }
+
+  .projects-grid{
+    grid-template-columns:1fr;
+  }
+
+  .title{
+    font-size:3rem;
+  }
+
+  .binder{
+    display:none;
+  }
 
 }
+
 .skills-card{
   margin-top:40px;
   background:rgba(255,255,255,0.65);
