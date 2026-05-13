@@ -292,18 +292,11 @@ font-size: 1.15rem;
 }
 .binder{
   position:absolute;
-
   top:0;
   left:50%;
-
   transform:translateX(-50%);
-
   height:100%;
-
-  width:150px;
-
   z-index:5;
-
   pointer-events:none;
 }
 @media (max-width: 900px) {
