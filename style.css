@@ -290,56 +290,23 @@ font-size: 1.15rem;
   top: 40px;
   right: 100px;
 }
-/* Container for the spine/rings */
-.spiral{
+.binder{
   position:absolute;
-  left:50%;
+
   top:0;
+  left:50%;
 
   transform:translateX(-50%);
 
-  width:50px;
   height:100%;
+  width:70px;
 
-  background-image:url("binder.png");
-  background-repeat:repeat-y;
-  background-size:contain;
+  object-fit:cover;
 
   z-index:5;
-}
 
-/* The Rings (Over the spine) */
-.spiral:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* Increased background-size from 9px to 25px for wider spacing */
-  background-size: 100% 25px; 
-  background-image: radial-gradient(
-    circle at 50% 50%, 
-    transparent 30%, 
-    #333 35%, 
-    #777 45%, 
-    #333 50%, 
-    transparent 55%
-  );
+  pointer-events:none;
 }
-
-/* Subtle vertical line to define the fold */
-.spiral:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 1px;
-  height: 100%;
-  background: rgba(0,0,0,0.2);
-  transform: translateX(-50%);
-}
-
 @media (max-width: 900px) {
 
   .book {
