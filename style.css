@@ -293,7 +293,7 @@ font-size: 1.15rem;
 .binder{
   position:absolute;
   top:0;
-  left:47%;
+  left:50%;
   transform:translateX(-50%);
   width:180px;
   height:100%;
