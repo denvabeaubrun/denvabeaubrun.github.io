@@ -299,9 +299,8 @@ font-size: 1.15rem;
   transform:translateX(-50%);
 
   height:100%;
-  width:70px;
 
-  object-fit:cover;
+  width:90px;
 
   z-index:5;
 
