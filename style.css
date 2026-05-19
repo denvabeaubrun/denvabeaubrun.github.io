@@ -515,7 +515,7 @@ font-size: 1.15rem;
 }
 .tape-green{
   background:rgba(181,234,181,0.7);
-  top:10px;
+   top:-10px;
 }
 .page-nav{
   display:flex;
