@@ -500,6 +500,9 @@ font-size: 1.15rem;
 .tape3{
   transform:translateX(-50%) rotate(-8deg);
 }
+.tape4{
+  transform:translateX(-50%) rotate(8deg);
+}
 .tape-lavender{
   background:rgba(210,190,255,0.7);
 }
@@ -509,6 +512,9 @@ font-size: 1.15rem;
 
 .tape-blue{
   background:rgba(173,216,230,0.7);
+}
+.tape-green{
+  background:rgba(181,234,181,0.7);
 }
 .page-nav{
   display:flex;
