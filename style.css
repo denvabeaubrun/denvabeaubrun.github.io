@@ -83,22 +83,30 @@ h1 {
   font-size:1.15rem;
   line-height:1.9;
   color:#5c4b3f;
-  max-width:420px;
-  white-space:nowrap;
   margin-top:25px;
 }
 
-.contact-card a{
+.contact-info button{
+  background:none;
+  border:none;
+  padding:0;
   color:#5c4b3f;
-  text-decoration:none;
   font-size:1.15rem;
   font-weight:500;
+  cursor:pointer;
   display:block;
-  margin-top:12px;
+  margin-bottom:12px;
 }
 
-.contact-card a:hover{
+.contact-info button:hover,
+.contact-info a:hover{
   text-decoration:underline;
+}
+
+.contact-info a{
+  color:#5c4b3f;
+  text-decoration:none;
+  display:block;
 }
 .sticker {
   position: absolute;
