@@ -98,6 +98,17 @@ font-size: 1.15rem;
   text-decoration: underline;
 
 }
+.contact-card a{
+  text-decoration:none;
+  color:#4b3b33;   /* same brown tone */
+  font-size:1.2rem;
+  display:block;
+  margin-top:15px;
+}
+
+.contact-card a:hover{
+  text-decoration:underline;
+}
 .sticker {
   position: absolute;
   font-size: 1.8rem;
