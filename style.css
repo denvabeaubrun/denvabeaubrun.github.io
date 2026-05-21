@@ -80,30 +80,21 @@ h1 {
   max-width: 420px;
 }
 .contact-info{
-font-size: 1.15rem;
-  line-height: 1.9;
-  color: #5c4b3f;
-  max-width: 420px;
-  white-space: nowrap;
-  margin-top: 25px;
-}
-.contact-info a {
-  color: #5b4a3d;
-  text-decoration: none;
-  font-weight: 500;
+  font-size:1.15rem;
+  line-height:1.9;
+  color:#5c4b3f;
+  max-width:420px;
+  white-space:nowrap;
+  margin-top:25px;
 }
 
-
-.contact-info a:hover {
-  text-decoration: underline;
-
-}
 .contact-card a{
+  color:#5c4b3f;
   text-decoration:none;
-  color:#4b3b33;   /* same brown tone */
-  font-size:1.2rem;
+  font-size:1.15rem;
+  font-weight:500;
   display:block;
-  margin-top:15px;
+  margin-top:12px;
 }
 
 .contact-card a:hover{
