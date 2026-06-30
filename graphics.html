@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Graphic Design — Denva Beaubrun</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #fff;
+      color: #111;
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      min-height: 100vh;
+    }
+
+    /* LAYOUT */
+    .layout {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      width: 220px;
+      flex-shrink: 0;
+      padding: 48px 32px;
+      position: fixed;
+      top: 0; left: 0; bottom: 0;
+      overflow-y: auto;
+    }
+
+    .sidebar-name {
+      font-family: 'EB Garamond', serif;
+      font-size: 22px;
+      font-weight: 400;
+      color: #111;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 48px;
+      line-height: 1.3;
+    }
+
+    .sidebar-section {
+      margin-bottom: 32px;
+    }
+
+    .sidebar-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      color: #111;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .sidebar-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .sidebar-links a {
+      font-size: 13px;
+      color: #999;
+      text-decoration: none;
+      line-height: 1.4;
+      transition: color 0.15s;
+    }
+
+    .sidebar-links a:hover { color: #111; }
+    .sidebar-links a.active { color: #111; }
+
+    /* MAIN */
+    .main {
+      margin-left: 220px;
+      flex: 1;
+      padding: 48px 48px 80px;
+      border-left: 1px solid #f0f0f0;
+    }
+
+    /* GRID */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 48px 32px;
+    }
+
+    /* CARD */
+    .card {
+      cursor: pointer;
+    }
+
+    .card-thumb {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+      margin-bottom: 14px;
+      background: #f5f5f5;
+    }
+
+    .card-thumb.sq { aspect-ratio: 1; }
+    .card-thumb.tall { aspect-ratio: 3/4; }
+
+    .card:hover .card-thumb { opacity: 0.88; }
+    .card-thumb { transition: opacity 0.2s; }
+
+    .card-title {
+      font-size: 15px;
+      font-weight: 400;
+      color: #111;
+      margin-bottom: 3px;
+    }
+
+    .card-year {
+      font-size: 13px;
+      color: #999;
+    }
+
+    /* PLACEHOLDER */
+    .placeholder {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 14px;
+    }
+    .placeholder.sq { aspect-ratio: 1; }
+    .placeholder.rect { aspect-ratio: 4/3; }
+
+    /* BACK TO TOP */
+    .back-top {
+      text-align: center;
+      padding: 60px 0 20px;
+      font-size: 13px;
+      color: #999;
+      cursor: pointer;
+      text-decoration: none;
+      display: block;
+    }
+    .back-top:hover { color: #111; }
+
+    /* MODAL */
+    .modal-backdrop {
+      display: none;
+      position: fixed; inset: 0; z-index: 200;
+      background: rgba(0,0,0,0.5);
+      overflow-y: auto;
+    }
+    .modal-backdrop.open { display: block; }
+    .modal {
+      max-width: 760px;
+      margin: 80px auto 80px;
+      background: #fff;
+      padding: 48px;
+      position: relative;
+    }
+    .modal-close {
+      position: absolute; top: 20px; right: 24px;
+      background: none; border: none; cursor: pointer;
+      font-size: 22px; color: #999; line-height: 1;
+    }
+    .modal-close:hover { color: #111; }
+    .modal-title {
+      font-size: 22px; font-weight: 400;
+      color: #111; margin-bottom: 4px;
+    }
+    .modal-year { font-size: 13px; color: #999; margin-bottom: 28px; }
+    .modal-img {
+      width: 100%; display: block;
+      background: #f5f5f5; margin-bottom: 28px;
+    }
+    .modal-placeholder {
+      width: 100%; aspect-ratio: 4/3;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 10px; letter-spacing: 1.5px;
+      color: rgba(255,255,255,0.3); margin-bottom: 28px;
+    }
+    .modal-rule { height: 1px; background: #f0f0f0; margin-bottom: 28px; }
+    .modal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 32px; }
+    .modal-label { font-size: 10px; font-weight: 500; letter-spacing: 1.5px; color: #999; margin-bottom: 6px; }
+    .modal-body { font-size: 13px; line-height: 1.8; color: #444; font-weight: 300; }
+
+    /* FOOTER */
+    .sidebar-footer {
+      position: absolute;
+      bottom: 48px; left: 32px;
+    }
+    .sidebar-footer a {
+      font-size: 13px; color: #999; text-decoration: none; display: block; margin-bottom: 6px;
+    }
+    .sidebar-footer a:hover { color: #111; }
+    .powered {
+      text-align: center;
+      padding: 40px 0 20px;
+      font-size: 12px;
+      color: #ccc;
+    }
+
+    @media (max-width: 768px) {
+      .layout { flex-direction: column; }
+      .sidebar { width: 100%; position: relative; padding: 32px 24px 24px; border-bottom: 1px solid #f0f0f0; }
+      .sidebar-footer { position: relative; bottom: auto; left: auto; margin-top: 24px; }
+      .main { margin-left: 0; padding: 32px 24px; border-left: none; }
+      .grid { grid-template-columns: 1fr; }
+      .modal { margin: 0; padding: 32px 24px; }
+      .modal-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <a href="index.html" class="sidebar-name">Denva Beaubrun</a>
+
+    <div class="sidebar-section">
+      <span class="sidebar-label">PROJECTS</span>
+      <div class="sidebar-links">
+        <a href="#" onclick="openModal('portrait'); return false;">Portrait, No. 01 — Editorial Poster</a>
+        <a href="#" onclick="openModal('pitstop'); return false;">Pitstop Pals — Mascot Logo Concept</a>
+        <a href="#" onclick="openModal('aura'); return false;">Aura Dental — Brand Concept</a>
+        <a href="#" onclick="openModal('fizzbox'); return false;">Fizzbox — Craft Soda Brand</a>
+        <a href="#" onclick="openModal('lapapoe'); return false;">Lapapoe — Social Media Design</a>
+        <a href="#" onclick="openModal('eightthirtyone'); return false;">The 831 Experience — Brand System</a>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-links">
+        <a href="index.html">About</a>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <span class="sidebar-label">WORK</span>
+      <div class="sidebar-links">
+        <a href="mailto:denvacbeaubrun@gmail.com">Contact</a>
+      </div>
+    </div>
+
+    <div class="sidebar-footer">
+      <a href="index.html">← Dev Portfolio</a>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+    <div class="grid" id="projects-grid">
+
+      <!-- Portrait -->
+      <div class="card" onclick="openModal('portrait')">
+        <div class="placeholder rect" style="background:#2B2B2E;">
+          <!-- Replace: <img src="images/portrait-poster.jpg" class="card-thumb rect" alt="Portrait No. 01"> -->
+        </div>
+        <p class="card-title">Portrait, No. 01 — Editorial Poster</p>
+        <p class="card-year">2026</p>
+      </div>
+
+      <!-- Pitstop Pals -->
+      <div class="card" onclick="openModal('pitstop')">
+        <div class="placeholder sq" style="background:#FFD23F;">
+          <!-- Replace: <img src="images/pitstop-pals.jpg" class="card-thumb sq" alt="Pitstop Pals"> -->
+        </div>
+        <p class="card-title">Pitstop Pals — Mascot Logo Concept</p>
+        <p class="card-year">2026</p>
+      </div>
+
+      <!-- Aura Dental -->
+      <div class="card" onclick="openModal('aura')">
+        <div class="placeholder rect" style="background:#0D0D0D;">
+          <!-- Replace: <img src="images/aura-dental.jpg" class="card-thumb rect" alt="Aura Dental"> -->
+        </div>
+        <p class="card-title">Aura Dental — Brand Concept</p>
+        <p class="card-year">2026</p>
+      </div>
+
+      <!-- Fizzbox -->
+      <div class="card" onclick="openModal('fizzbox')">
+        <div class="placeholder sq" style="background:#FF4D6D;">
+          <!-- Replace: <img src="images/fizzbox.jpg" class="card-thumb sq" alt="Fizzbox"> -->
+        </div>
+        <p class="card-title">Fizzbox — Craft Soda Brand</p>
+        <p class="card-year">2026</p>
+      </div>
+
+      <!-- Lapapoe -->
+      <div class="card" onclick="openModal('lapapoe')">
+        <div class="placeholder rect" style="background:#FAF7F2; color:rgba(0,0,0,0.15);">
+          <!-- Replace: <img src="images/lapapoe.jpg" class="card-thumb rect" alt="Lapapoe"> -->
+        </div>
+        <p class="card-title">Lapapoe — Social Media Design</p>
+        <p class="card-year">2026</p>
+      </div>
+
+      <!-- 831 -->
+      <div class="card" onclick="openModal('eightthirtyone')">
+        <div class="placeholder sq" style="background:#C8185A;">
+          <!-- Replace: <img src="images/831-experience.jpg" class="card-thumb sq" alt="The 831 Experience"> -->
+        </div>
+        <p class="card-title">The 831 Experience — Brand System</p>
+        <p class="card-year">2025–2026</p>
+      </div>
+
+    </div>
+
+    <a href="#" class="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;">↑ Back to Top</a>
+    <p class="powered">Denva Beaubrun · Graphic Design Portfolio</p>
+  </main>
+
+</div>
+
+<!-- MODAL -->
+<div class="modal-backdrop" id="modal-backdrop" onclick="closeModal(event)">
+  <div class="modal" id="modal-content">
+    <button class="modal-close" onclick="closeModalBtn()">×</button>
+    <div id="modal-inner"></div>
+  </div>
+</div>
+
+<script>
+  const projects = {
+    portrait: {
+      title: 'Portrait, No. 01 — Editorial Poster',
+      year: '2026',
+      bg: '#2B2B2E',
+      role: 'Art direction, typography, photo treatment',
+      tools: 'Canva, original photography',
+      about: 'A self-directed editorial poster built around custom typography and original photography. An original black-and-white photograph anchors the composition, overlapped by a bold serif letterform that breaks the boundary between image and type.',
+      process: 'A single blue rule line carries the only color in the piece. Supporting elements — a figure caption, edition number, and signature line — borrow print conventions to give it an editorial, published feel. Demonstrates typographic hierarchy, tonal photo treatment, grid-based layout, and restrained color use.'
+    },
+    pitstop: {
+      title: 'Pitstop Pals — Mascot Logo Concept',
+      year: '2026',
+      bg: '#FFD23F',
+      role: 'Character design, brand identity, style guide',
+      tools: 'Canva',
+      about: 'A playful, original mascot logo for a fictional auto brand. The piece pairs a rounded car character inside a badge-style circular frame, with a clean two-line wordmark treatment.',
+      process: 'Delivered as a complete mini brand system: the primary mascot logo, color palette with hex codes, size variations at large/medium/favicon scales, and a single-color line version for print. This range demonstrates systems-level thinking beyond a single logo.'
+    },
+    aura: {
+      title: 'Aura Dental — Brand Concept',
+      year: '2026',
+      bg: '#0D0D0D',
+      role: 'Brand identity, social media content, print flyer',
+      tools: 'Canva, Unsplash photography (free license)',
+      about: 'A self-directed brand concept for a fictional premium dental practice. The system uses a near-black, white, and gold palette to position Aura Dental as sophisticated and aspirational.',
+      process: 'Designed three Instagram posts (service spotlight, before/after, doctor quote) and a new patient flyer, all using a consistent visual language: gold rule lines, light-weight typography on dark backgrounds, and real photography with desaturation overlays. A secondary cobalt/white variant was also developed to show range.'
+    },
+    fizzbox: {
+      title: 'Fizzbox — Craft Soda Brand',
+      year: '2026',
+      bg: '#FF4D6D',
+      role: 'Packaging design, brand identity, brand applications',
+      tools: 'Canva',
+      about: 'A playful craft soda brand built around a bold saturated palette and a consistent visual system scaling across three flavor variants, a six-pack carrier, tote bag, and social media post.',
+      process: 'The starburst "FB" logo mark reads as energetic without feeling dated. The wavy double-band across each can is the flavor stripe system: every can shares the same wave shape but colors flip per flavor, making the whole line feel cohesive rather than like separate brands.'
+    },
+    lapapoe: {
+      title: 'Lapapoe Healthcare — Social Media Design',
+      year: '2026',
+      bg: '#FAF7F2',
+      role: 'Social media design, copywriting, art direction',
+      tools: 'Canva',
+      about: 'An Instagram graphic and caption for a healthcare brand promoting a free webinar for parents of children with disabilities. Designed with a calm, warm palette and a scannable layout built for busy parents.',
+      process: 'Chose soft, muted tones rather than bright colors since the audience may be navigating stressful circumstances. The info card is structured for scannability with labeled sections and contrasting type weights. Figures are intentionally abstract to avoid centering any one family type, supporting an inclusive healthcare audience.'
+    },
+    eightthirtyone: {
+      title: 'The 831 Experience — Brand System',
+      year: '2025–2026',
+      bg: '#C8185A',
+      role: 'Lead UX/UI Designer, Web Developer',
+      tools: 'Figma, WordPress, Divi Builder, React, TypeScript',
+      about: 'Brand system and landing page for The 831 Experience, a community initiative by Powered By Love, Inc. providing food, clothing, and wellness services to people experiencing homelessness in Brooklyn.',
+      process: 'Developed the full brand system (Loving Magenta, Radiant Gold, Charcoal, Bone; New Spirit Medium Italic and Montserrat Semibold typography), built Figma mockups, developed React/TypeScript components, and implemented the final site in WordPress/Divi in collaboration with stakeholders.'
+    }
+  };
+
+  function openModal(id) {
+    const p = projects[id];
+    if (!p) return;
+    const textColor = (p.bg === '#FAF7F2') ? 'rgba(0,0,0,0.2)' : 'rgba(255,255,255,0.2)';
+    document.getElementById('modal-inner').innerHTML = `
+      <p class="modal-title">${p.title}</p>
+      <p class="modal-year">${p.year}</p>
+      <div class="modal-placeholder" style="background:${p.bg}; color:${textColor};">
+        <!-- Replace with your actual image -->
+      </div>
+      <div class="modal-rule"></div>
+      <div class="modal-grid">
+        <div><p class="modal-label">ROLE</p><p class="modal-body">${p.role}</p></div>
+        <div><p class="modal-label">TOOLS</p><p class="modal-body">${p.tools}</p></div>
+        <div><p class="modal-label">ABOUT</p><p class="modal-body">${p.about}</p></div>
+        <div><p class="modal-label">PROCESS</p><p class="modal-body">${p.process}</p></div>
+      </div>
+    `;
+    document.getElementById('modal-backdrop').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal(e) {
+    if (e.target === document.getElementById('modal-backdrop')) {
+      document.getElementById('modal-backdrop').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
+
+  function closeModalBtn() {
+    document.getElementById('modal-backdrop').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      document.getElementById('modal-backdrop').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  });
+</script>
+
+</body>
+</html>
