@@ -1,1 +1,175 @@
-I'm Denva Beaubrun, a UX/UI and and graphic designer. I've built brand systems, social media content, editorial posters, and web interfaces for nonprofits, theatre companies, and client projects in New York. Design and code aren't separate things for me, I use both to make work that looks good and colorful but functions.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Denva Beaubrun</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #fff;
+      color: #111;
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 32px 48px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    nav a {
+      font-size: 13px;
+      color: #999;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    nav a:hover { color: #111; }
+
+    nav .nav-name {
+      font-family: 'EB Garamond', serif;
+      font-size: 18px;
+      font-weight: 400;
+      color: #111;
+    }
+
+    .main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 48px;
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(36px, 6vw, 56px);
+      font-weight: 400;
+      color: #111;
+      margin-bottom: 48px;
+      line-height: 1.1;
+    }
+
+    .bio {
+      font-size: 16px;
+      line-height: 1.9;
+      color: #555;
+      font-weight: 300;
+      margin-bottom: 32px;
+    }
+
+    .bio + .bio {
+      margin-top: 0;
+    }
+
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: #ddd;
+      margin: 40px auto;
+    }
+
+    .details {
+      display: flex;
+      gap: 48px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .detail-item {
+      text-align: center;
+    }
+
+    .detail-label {
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: #bbb;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .detail-value {
+      font-size: 13px;
+      color: #111;
+    }
+
+    .detail-value a {
+      color: #111;
+      text-decoration: none;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 1px;
+      transition: border-color 0.15s;
+    }
+    .detail-value a:hover { border-color: #111; }
+
+    footer {
+      text-align: center;
+      padding: 32px;
+      font-size: 11px;
+      color: #ccc;
+      border-top: 1px solid #f0f0f0;
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 24px; }
+      .main { padding: 60px 24px; }
+      .details { gap: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="graphics.html" class="nav-name">Denva Beaubrun</a>
+  <div style="display:flex; gap:32px;">
+    <a href="graphics.html">Work</a>
+    <a href="index.html">Dev</a>
+    <a href="mailto:denvacbeaubrun@gmail.com">Contact</a>
+  </div>
+</nav>
+
+<main class="main">
+  <h1>About</h1>
+
+  <p class="bio">I'm Denva Beaubrun, a UX/UI and graphic designer based in Brooklyn, NY. I study Computer Science with a Creative Writing minor at Brooklyn College, and I work at the intersection of visual design and user experience — building things that look intentional and feel easy to use.</p>
+
+  <p class="bio">I've designed brand systems, social media content, editorial pieces, and web interfaces for nonprofits, theatre companies, and client work across New York. Design and code aren't separate things for me — I use both to make work that looks good and actually functions. I graduate in January 2027 and I'm currently looking for internships and roles in design.</p>
+
+  <div class="divider"></div>
+
+  <div class="details">
+    <div class="detail-item">
+      <span class="detail-label">BASED IN</span>
+      <span class="detail-value">Brooklyn, NY</span>
+    </div>
+    <div class="detail-item">
+      <span class="detail-label">EDUCATION</span>
+      <span class="detail-value">Brooklyn College, CUNY<br>B.S. Computer Science · Jan 2027</span>
+    </div>
+    <div class="detail-item">
+      <span class="detail-label">EMAIL</span>
+      <span class="detail-value"><a href="mailto:denvacbeaubrun@gmail.com">denvacbeaubrun@gmail.com</a></span>
+    </div>
+    <div class="detail-item">
+      <span class="detail-label">PORTFOLIO</span>
+      <span class="detail-value"><a href="index.html">Dev work →</a></span>
+    </div>
+  </div>
+</main>
+
+<footer>Denva Beaubrun · 2026</footer>
+
+</body>
+</html>
