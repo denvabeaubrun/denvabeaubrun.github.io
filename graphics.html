@@ -7,92 +7,33 @@
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      background: #fff;
-      color: #111;
-      font-family: 'Inter', sans-serif;
-      font-weight: 300;
-      min-height: 100vh;
-    }
-
+    body { background: #fff; color: #111; font-family: 'Inter', sans-serif; font-weight: 300; min-height: 100vh; }
     .layout { display: flex; min-height: 100vh; }
-
-    .sidebar {
-      width: 220px; flex-shrink: 0; padding: 48px 32px;
-      position: fixed; top: 0; left: 0; bottom: 0; overflow-y: auto;
-    }
-
-    .sidebar-name {
-      font-family: 'EB Garamond', serif; font-size: 22px; font-weight: 400;
-      color: #111; text-decoration: none; display: block; margin-bottom: 48px; line-height: 1.3;
-    }
-
+    .sidebar { width: 220px; flex-shrink: 0; padding: 48px 32px; position: fixed; top: 0; left: 0; bottom: 0; overflow-y: auto; }
+    .sidebar-name { font-family: 'EB Garamond', serif; font-size: 22px; font-weight: 400; color: #111; text-decoration: none; display: block; margin-bottom: 48px; line-height: 1.3; }
     .sidebar-section { margin-bottom: 32px; }
-
-    .sidebar-label {
-      font-size: 10px; font-weight: 500; letter-spacing: 1.5px;
-      color: #111; margin-bottom: 12px; display: block;
-    }
-
+    .sidebar-label { font-size: 10px; font-weight: 500; letter-spacing: 1.5px; color: #111; margin-bottom: 12px; display: block; }
     .sidebar-links { display: flex; flex-direction: column; gap: 10px; }
-
-    .sidebar-links a {
-      font-size: 13px; color: #999; text-decoration: none;
-      line-height: 1.4; transition: color 0.15s;
-    }
+    .sidebar-links a { font-size: 13px; color: #999; text-decoration: none; line-height: 1.4; transition: color 0.15s; }
     .sidebar-links a:hover { color: #111; }
-
     .sidebar-footer { position: absolute; bottom: 48px; left: 32px; }
-    .sidebar-footer a {
-      font-size: 13px; color: #999; text-decoration: none; display: block; margin-bottom: 6px;
-    }
+    .sidebar-footer a { font-size: 13px; color: #999; text-decoration: none; display: block; margin-bottom: 6px; }
     .sidebar-footer a:hover { color: #111; }
-
-    .main {
-      margin-left: 220px; flex: 1;
-      padding: 48px 48px 80px; border-left: 1px solid #f0f0f0;
-    }
-
-    .grid {
-      display: grid; grid-template-columns: repeat(2, 1fr); gap: 48px 32px;
-    }
-
+    .main { margin-left: 220px; flex: 1; padding: 48px 48px 80px; border-left: 1px solid #f0f0f0; }
+    .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 48px 32px; }
     .card { cursor: pointer; }
-
-    .card-thumb {
-      width: 100%; aspect-ratio: 4/3; object-fit: cover;
-      display: block; margin-bottom: 14px; background: #f5f5f5;
-      transition: opacity 0.2s;
-    }
+    .card-thumb { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; margin-bottom: 14px; background: #f5f5f5; transition: opacity 0.2s; }
     .card-thumb.sq { aspect-ratio: 1; }
     .card:hover .card-thumb { opacity: 0.88; }
-
     .card-title { font-size: 15px; font-weight: 400; color: #111; margin-bottom: 3px; }
     .card-year { font-size: 13px; color: #999; }
-
-    .back-top {
-      text-align: center; padding: 60px 0 20px; font-size: 13px;
-      color: #999; cursor: pointer; text-decoration: none; display: block;
-    }
+    .back-top { text-align: center; padding: 60px 0 20px; font-size: 13px; color: #999; cursor: pointer; text-decoration: none; display: block; }
     .back-top:hover { color: #111; }
-
     .powered { text-align: center; padding: 0 0 40px; font-size: 12px; color: #ccc; }
-
-    /* MODAL */
-    .modal-backdrop {
-      display: none; position: fixed; inset: 0; z-index: 200;
-      background: rgba(0,0,0,0.5); overflow-y: auto;
-    }
+    .modal-backdrop { display: none; position: fixed; inset: 0; z-index: 200; background: rgba(0,0,0,0.5); overflow-y: auto; }
     .modal-backdrop.open { display: block; }
-    .modal {
-      max-width: 760px; margin: 80px auto; background: #fff;
-      padding: 48px; position: relative;
-    }
-    .modal-close {
-      position: absolute; top: 20px; right: 24px; background: none;
-      border: none; cursor: pointer; font-size: 22px; color: #999; line-height: 1;
-    }
+    .modal { max-width: 760px; margin: 80px auto; background: #fff; padding: 48px; position: relative; }
+    .modal-close { position: absolute; top: 20px; right: 24px; background: none; border: none; cursor: pointer; font-size: 22px; color: #999; line-height: 1; }
     .modal-close:hover { color: #111; }
     .modal-title { font-size: 22px; font-weight: 400; color: #111; margin-bottom: 4px; }
     .modal-year { font-size: 13px; color: #999; margin-bottom: 28px; }
@@ -101,7 +42,6 @@
     .modal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 32px; }
     .modal-label { font-size: 10px; font-weight: 500; letter-spacing: 1.5px; color: #999; margin-bottom: 6px; }
     .modal-body { font-size: 13px; line-height: 1.8; color: #444; font-weight: 300; }
-
     @media (max-width: 768px) {
       .layout { flex-direction: column; }
       .sidebar { width: 100%; position: relative; padding: 32px 24px 24px; border-bottom: 1px solid #f0f0f0; }
@@ -119,32 +59,28 @@
 
   <aside class="sidebar">
     <a href="index.html" class="sidebar-name">Denva Beaubrun</a>
-
     <div class="sidebar-section">
       <span class="sidebar-label">PROJECTS</span>
       <div class="sidebar-links">
         <a href="#" onclick="openModal('portrait'); return false;">Portrait, No. 01 — Editorial Poster</a>
         <a href="#" onclick="openModal('pitstop'); return false;">Pitstop Pals — Mascot Logo Concept</a>
-        <a href="#" onclick="openModal('aura'); return false;">Aura Dental — Brand Concept</a>
+        <a href="#" onclick="openModal('swing'); return false;">Swing Strong — Instagram Series</a>
         <a href="#" onclick="openModal('fizzbox'); return false;">Fizzbox — Craft Soda Brand</a>
         <a href="#" onclick="openModal('lapapoe'); return false;">Lapapoe — Social Media Design</a>
         <a href="#" onclick="openModal('eightthirtyone'); return false;">The 831 Experience — Brand System</a>
       </div>
     </div>
-
     <div class="sidebar-section">
       <div class="sidebar-links">
         <a href="index.html">About</a>
       </div>
     </div>
-
     <div class="sidebar-section">
       <span class="sidebar-label">WORK</span>
       <div class="sidebar-links">
         <a href="mailto:denvacbeaubrun@gmail.com">Contact</a>
       </div>
     </div>
-
     <div class="sidebar-footer">
       <a href="index.html">← Dev Portfolio</a>
     </div>
@@ -153,42 +89,36 @@
   <main class="main">
     <div class="grid">
 
-      <!-- Portrait -->
       <div class="card" onclick="openModal('portrait')">
         <img src="images/portrait-poster.png" class="card-thumb" alt="Portrait No. 01">
         <p class="card-title">Portrait, No. 01 — Editorial Poster</p>
         <p class="card-year">2026</p>
       </div>
 
-      <!-- Pitstop Pals -->
       <div class="card" onclick="openModal('pitstop')">
         <img src="images/pitstop-pals.png" class="card-thumb sq" alt="Pitstop Pals">
         <p class="card-title">Pitstop Pals — Mascot Logo Concept</p>
         <p class="card-year">2026</p>
       </div>
 
-      <!-- Perform for golf -->
       <div class="card" onclick="openModal('swing')">
         <img src="images/swing-strong.png" class="card-thumb" alt="Swing Strong">
         <p class="card-title">Swing Strong — Instagram Content Series</p>
         <p class="card-year">2026</p>
       </div>
 
-      <!-- Fizzbox -->
       <div class="card" onclick="openModal('fizzbox')">
         <img src="images/fizzbox.png" class="card-thumb sq" alt="Fizzbox">
         <p class="card-title">Fizzbox — Craft Soda Brand</p>
         <p class="card-year">2026</p>
       </div>
 
-      <!-- Lapapoe -->
       <div class="card" onclick="openModal('lapapoe')">
         <img src="images/lapapoe.png" class="card-thumb" alt="Lapapoe">
         <p class="card-title">Lapapoe — Social Media Design</p>
         <p class="card-year">2026</p>
       </div>
 
-      <!-- 831 -->
       <div class="card" onclick="openModal('eightthirtyone')">
         <img src="images/831-experience.png" class="card-thumb sq" alt="The 831 Experience">
         <p class="card-title">The 831 Experience — Brand System</p>
@@ -231,14 +161,14 @@
       process: 'Delivered as a complete mini brand system: the primary mascot logo, color palette with hex codes, size variations at large/medium/favicon scales, and a single-color line version for print. This range demonstrates systems-level thinking beyond a single logo.'
     },
     swing: {
-  title: 'Swing Strong — Instagram Content Series',
-  year: '2026',
-  img: 'images/swing-strong.png',
-  role: 'Social media content design, brand research',
-  tools: 'Canva',
-  about: 'A three-post Instagram series built for a fiction golf company. Covers three content pillars — session spotlight, weekly tip, and client testimonial — in a consistent dark and lime green visual system.',
-  process: 'A self-directed portfolio concept for a fictional brand. Each post uses the same near-black background, lime green accent, and type hierarchy so the series reads as a cohesive feed rather than three separate graphics. Built to demonstrate social media content strategy and brand consistency across multiple post formats.'
-}
+      title: 'Swing Strong — Instagram Content Series',
+      year: '2026',
+      img: 'images/swing-strong.png',
+      role: 'Social media content design, brand research',
+      tools: 'Canva',
+      about: 'A three-post Instagram series for a fictional golf fitness brand. Covers three content pillars — session spotlight, weekly tip, and client testimonial — in a consistent dark and lime green visual system.',
+      process: 'A self-directed portfolio concept for a fictional brand. Each post uses the same near-black background, lime green accent, and type hierarchy so the series reads as a cohesive feed rather than three separate graphics. Built to demonstrate social media content strategy and brand consistency across multiple post formats.'
+    },
     fizzbox: {
       title: 'Fizzbox — Craft Soda Brand',
       year: '2026',
