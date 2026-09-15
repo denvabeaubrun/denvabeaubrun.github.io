@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Writing — Denva Beaubrun</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #F7F6F2;
+    --ink: #1A1A18;
+    --mid: #6B6B64;
+    --rule: #D8D6CF;
+    --accent: #2C4A3E;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* NAV */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 48px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .nav-name {
+    font-family: 'EB Garamond', serif;
+    font-size: 18px;
+    letter-spacing: 0.01em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    font-size: 13px;
+    color: var(--mid);
+    letter-spacing: 0.02em;
+  }
+
+  .nav-links a:hover { color: var(--ink); }
+  .nav-links .active { color: var(--ink); border-bottom: 1px solid var(--ink); }
+
+  /* HERO */
+  .hero {
+    padding: 72px 48px 48px;
+    max-width: 680px;
+  }
+
+  .hero h1 {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(36px, 5vw, 52px);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 18px;
+  }
+
+  .hero p {
+    color: var(--mid);
+    font-size: 15px;
+    max-width: 480px;
+    line-height: 1.7;
+  }
+
+  /* WORK */
+  .work {
+    padding: 0 48px 96px;
+    max-width: 900px;
+  }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--mid);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    padding-top: 48px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .piece {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 64px;
+    padding: 40px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .piece:last-child { border-bottom: none; }
+
+  .piece-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .piece-type {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .piece-title {
+    font-family: 'EB Garamond', serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.25;
+  }
+
+  .piece-context {
+    font-size: 13px;
+    color: var(--mid);
+    margin-top: 4px;
+  }
+
+  .piece-body {
+    padding-top: 4px;
+  }
+
+  .piece-excerpt {
+    font-family: 'EB Garamond', serif;
+    font-size: 16px;
+    line-height: 1.75;
+    font-style: italic;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+
+  .piece-desc {
+    font-size: 14px;
+    color: var(--mid);
+    line-height: 1.65;
+    margin-bottom: 20px;
+  }
+
+  .read-link {
+    display: inline-block;
+    font-size: 13px;
+    color: var(--accent);
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 1px;
+    transition: opacity 0.2s;
+  }
+
+  .read-link:hover { opacity: 0.6; }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--rule);
+    padding: 32px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: var(--mid);
+  }
+
+  footer a:hover { color: var(--ink); }
+
+  @media (max-width: 680px) {
+    nav { padding: 20px 24px; }
+    .nav-links { gap: 20px; }
+    .hero { padding: 48px 24px 32px; }
+    .work { padding: 0 24px 64px; }
+    .piece { grid-template-columns: 1fr; gap: 20px; }
+    footer { padding: 24px; flex-direction: column; gap: 12px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="https://denvabeaubrun.github.io" class="nav-name">Denva Beaubrun</a>
+  <ul class="nav-links">
+    <li><a href="https://denvabeaubrun.github.io">Work</a></li>
+    <li><a href="https://denvabeaubrun.github.io/graphics.html">Graphics</a></li>
+    <li><a href="#" class="active">Writing</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <h1>Writing</h1>
+  <p>Fiction, client work, and criticism. The goal is always the same: keep someone reading.</p>
+</section>
+
+<section class="work">
+
+  <p class="section-label">Fiction</p>
+
+  <div class="piece">
+    <div class="piece-meta">
+      <span class="piece-type">Novel excerpt</span>
+      <h2 class="piece-title">Paralysis Monster</h2>
+      <p class="piece-context">Completed thriller novel, currently being queried to literary agents</p>
+    </div>
+    <div class="piece-body">
+      <p class="piece-excerpt">"The figure towered over Olivier in the dark room with its back facing the boy on the bed. It stood close to his dad's height, six foot two. The figure's shoulders were narrow, and its lanky arms hung to its side, a contrast to his dad's broad shoulders and muscular arms."</p>
+      <p class="piece-desc">Chapter one of a completed thriller novel exploring sleep paralysis, family, and the line between what is real and what the mind constructs under fear.</p>
+    </div>
+  </div>
+
+  <p class="section-label">Client Work</p>
+
+  <div class="piece">
+    <div class="piece-meta">
+      <span class="piece-type">SEO Blog Post</span>
+      <h2 class="piece-title">Hosting Football Season at Home? Keep Knoxville Pests Off the Guest List</h2>
+      <p class="piece-context">Otis Termite & Pest Control via bluedress internet marketing</p>
+    </div>
+    <div class="piece-body">
+      <p class="piece-excerpt">"The grill's fired up, the coolers are stocked, and your buddy's already asking if you have enough chairs. Football season in Knoxville means one thing after another: tailgates, backyard watch parties, and a steady stream of friends and neighbors moving in and out of your house all afternoon."</p>
+      <p class="piece-desc">A long-form SEO blog post written for a pest control client, blending practical advice with a conversational tone aimed at Knoxville homeowners.</p>
+      <a href="https://otispestcontrol.net/hosting-football-season-at-home-keep-knoxville-pests-off-the-guest-list.php" target="_blank" class="read-link">Read the full piece</a>
+    </div>
+  </div>
+
+  <div class="piece">
+    <div class="piece-meta">
+      <span class="piece-type">SEO Blog Post</span>
+      <h2 class="piece-title">What Makes the Best HVAC Company in Knoxville, TN Different from the Rest?</h2>
+      <p class="piece-context">GENT Heating and Cooling via bluedress internet marketing</p>
+    </div>
+    <div class="piece-body">
+      <p class="piece-excerpt">"There are a lot of HVAC companies in Knoxville, TN. Most of them will show up, do the job, and move on. The best ones do something different. They show up prepared, explain what they find, and treat the work like it matters."</p>
+      <p class="piece-desc">A long-form SEO blog post written for an HVAC client, translating technical service information into accessible, trust-building content for homeowners.</p>
+      <a href="https://gentheatandcool.com/what-makes-the-best-hvac-company-in-knoxville-tn-different-from-the-rest.php" target="_blank" class="read-link">Read the full piece</a>
+    </div>
+  </div>
+
+</section>
+
+<footer>
+  <span>Denva Beaubrun</span>
+  <span><a href="mailto:denvacbeaubrun@gmail.com">denvacbeaubrun@gmail.com</a> &nbsp;&middot;&nbsp; <a href="https://denvabeaubrun.github.io/graphics.html">Graphics portfolio</a></span>
+</footer>
+
+</body>
+</html>
