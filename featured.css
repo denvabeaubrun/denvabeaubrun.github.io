@@ -1,0 +1,112 @@
+/* ---------- Left page: stays in view while projects scroll ---------- */
+.left-page {
+  position: sticky;
+  top: 40px;
+  align-self: start;
+}
+
+/* Contact is its own card now, matching the font of the rest of the page */
+.contact-card {
+  margin-top: 20px;
+}
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.contact-info a {
+  font: inherit;
+  font-weight: 500;
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ---------- Two big featured projects ---------- */
+.featured-grid {
+  grid-template-columns: 1fr;
+  gap: 48px;
+}
+.project-card {
+  display: flex;
+  flex-direction: column;
+}
+.project-links {
+  margin-top: auto;       /* buttons line up at the bottom of every card */
+  padding-top: 16px;
+}
+
+/* Clickable screenshots */
+.project-shot {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 14px;
+}
+.project-shot img {
+  display: block;
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+.project-shot:hover img {
+  transform: scale(1.03);
+}
+.project-shot-label {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  background: #3b2a24;
+  border-radius: 999px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.project-shot:hover .project-shot-label,
+.project-shot:focus-visible .project-shot-label {
+  opacity: 1;
+}
+
+/* What I built */
+.project-points {
+  margin: 12px 0 0;
+  padding-left: 20px;
+  line-height: 1.6;
+}
+.project-points li + li {
+  margin-top: 4px;
+}
+
+/* Tech tags reuse the Skills pill style, just smaller */
+.tech-tags {
+  margin-top: 14px;
+}
+.tech-tags span {
+  font-size: 13px;
+  padding: 4px 12px;
+}
+
+/* ---------- Sketchbook: smaller extra work ---------- */
+.sketchbook {
+  margin-top: 64px;
+}
+.sketchbook h2 {
+  font-size: 32px;
+}
+.sketch-grid {
+  grid-template-columns: minmax(0, 360px);
+}
+
+@media (max-width: 900px) {
+  .left-page {
+    position: static;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .project-shot img,
+  .project-shot-label {
+    transition: none;
+  }
+}
