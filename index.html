@@ -7,154 +7,132 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
+<!-- New styles for the featured layout. Loads after style.css so it can adjust it. -->
+<link rel="stylesheet" href="featured.css">
 </head>
 <body>
 
 <div class="book">
   <div class="binder"></div>
-  
+
   <!-- left page -->
-  
   <div class="left-page">
     <div class="page-nav">
+      <a href="#projects">Projects</a>
+      <a href="DenvaCBeaubrunResume.pdf" target="_blank">Resume</a>
+      <a href="#contact">Contact</a>
+    </div>
 
-  <a href="#projects">Projects</a>
-  <a href="DenvaCBeaubrunResume.pdf" target="_blank">Resume</a>
-  <a href="#contact">Contact</a>
+    <h1 class="title">Denva Beaubrun</h1>
+    <p>UX/UI designer and front-end developer focused on building responsive,
+      captivating web pages, animations, and progressive web applications using JavaScript, React, HTML, CSS and JSON.</p>
 
-</div>
-   <h1 class="title">Denva Beaubrun</h1>
-  <p>UX/UI designer and front-end developer focused on building responsive, 
-    captivating web pages, animations, and progressive web applications using JavaScript, React, HTML, CSS and JSON.</p>
-  <div class="skills-card">
+    <div class="skills-card">
+      <h3>Skills</h3>
+      <section class="skills">
+        <span>JavaScript</span>
+        <span>HTML</span>
+        <span>React</span>
+        <span>CSS</span>
+        <span>Bootstrap</span>
+        <span>UX/UI</span>
+      </section>
+    </div>
 
-  <h3>Skills</h3>
-
-  <section class="skills">
-    <span>JavaScript</span>
-    <span>HTML</span>
-    <span>React</span>
-    <span>CSS</span>
-    <span>Bootstrap</span>
-    <span>UX/UI</span>
-  </section>
-<div class="contact-card" id="contact">
-
-  <h3>Contact</h3>
-
-  <div class="contact-info">
-
-    <button onclick="window.open(
-      'https://mail.google.com/mail/?view=cm&fs=1&to=denvacbeaubrun@gmail.com',
-      'emailPopup',
-      'width=700,height=600'
-    )">
-      denvacbeaubrun@gmail.com
-    </button>
-
-    <a href="https://github.com/denvabeaubrun" target="_blank">
-      GitHub
-    </a>
-
-  </div>
-
-</div>
-  </div>
-  </div>
-<!--right page-->
-  <div class="right-page">
-  <h2>Projects</h2>
-
-  <div class="projects-grid">
-
-    <div class="project-card">
-      <div class="image-wrapper">
-
-    <div class="tape tape-lavender"></div>
-       <img src="planetwebsite.png" alt="Planet website screenshot">
+    <!-- Contact now sits on its own instead of inside the Skills box -->
+    <div class="contact-card" id="contact">
+      <h3>Contact</h3>
+      <div class="contact-info">
+        <a href="mailto:denvacbeaubrun@gmail.com">denvacbeaubrun@gmail.com</a>
+        <a href="https://github.com/denvabeaubrun" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
-      <h3>Planet Sights</h3>
-      <p>Progressive Space Web App where can you travel through the solar system</p>
+    </div>
+  </div>
+
+  <!-- right page -->
+  <div class="right-page" id="projects">
+    <h2>Projects</h2>
+
+    <div class="projects-grid featured-grid">
+
+      <!-- Studyo -->
+      <article class="project-card featured-card">
+        <div class="image-wrapper">
+          <div class="tape tape3 tape-blue"></div>
+          <a class="project-shot" href="https://denvabeaubrun.github.io/Studyo/" target="_blank" rel="noopener">
+            <img src="studyo-site.png" alt="Studyo homepage with colorful subject cards and an iPod-style Pomodoro timer">
+            <span class="project-shot-label">View live ↗</span>
+          </a>
+        </div>
+        <h3>Studyo: study tool for students</h3>
+        <p>A React app where students organize their subjects and classes, turn notes into flashcard sets, and study with flashcards, quizzes, and games.</p>
+        <ul class="project-points">
+          <li>iPod-style Pomodoro timer with a draggable click wheel for volume</li>
+          <li>Match and Memory games built from any flashcard set, with saved personal bests</li>
+          <li>Built-in ambient sounds, plus songs saved in the browser with IndexedDB</li>
+        </ul>
+        <div class="skills tech-tags">
+          <span>React</span><span>JavaScript</span><span>CSS</span><span>Web Audio API</span>
+        </div>
         <div class="project-links">
+          <a href="https://denvabeaubrun.github.io/Studyo/" target="_blank" rel="noopener">Live Demo</a>
+          <a href="https://github.com/denvabeaubrun/Studyo" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </article>
 
-    <a href="https://denvabeaubrun.github.io/cisc3610-portfolio/PWA-project/" target="_blank">
-      Live Demo
-    </a>
+      <!-- Planet Sights -->
+      <article class="project-card featured-card">
+        <div class="image-wrapper">
+          <div class="tape tape-lavender"></div>
+          <a class="project-shot" href="https://denvabeaubrun.github.io/cisc3610-portfolio/PWA-project/" target="_blank" rel="noopener">
+            <img src="planetwebsite.png" alt="Planet Sights showing Venus with an info card and an astronaut">
+            <span class="project-shot-label">View live ↗</span>
+          </a>
+        </div>
+        <h3>Planet Sights</h3>
+        <p>A progressive web app where you can travel through the solar system and learn about each planet.</p>
+        <ul class="project-points">
+          <li>Navigation bar for jumping between planets</li>
+          <li>Info cards with facts for each planet</li>
+          <li>Installable on phones and computers like an app</li>
+        </ul>
+        <div class="skills tech-tags">
+          <span>JavaScript</span><span>HTML</span><span>CSS</span><span>PWA</span>
+        </div>
+        <div class="project-links">
+          <a href="https://denvabeaubrun.github.io/cisc3610-portfolio/PWA-project/" target="_blank" rel="noopener">Live Demo</a>
+          <a href="https://github.com/denvabeaubrun/cisc3610-portfolio/tree/main/PWA-project" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </article>
 
-    <a href="https://github.com/denvabeaubrun/cisc3610-portfolio/tree/main/PWA-project" target="_blank">
-      GitHub
-    </a>
-
-  </div>
     </div>
 
-    <div class="project-card">
-      <div class="image-wrapper">
-
-    <div class="tape tape2 tape-pink"></div>
-       <img src="resume-site.png" alt="Resume website screenshot">
+    <!-- Smaller extra work. Delete this whole section to show only the two projects. -->
+    <section class="sketchbook">
+      <h2>Sketchbook</h2>
+      <div class="projects-grid sketch-grid">
+        <article class="project-card">
+          <div class="image-wrapper">
+            <div class="tape tape4 tape-green"></div>
+            <a class="project-shot" href="https://denvabeaubrun.github.io/cisc3610-portfolio/Wick/" target="_blank" rel="noopener">
+              <img src="wick.gif" alt="Stormy seascape animation with sailboat, rain, and lightning made in Wick Editor">
+              <span class="project-shot-label">View live ↗</span>
+            </a>
+          </div>
+          <h3>Wick Editor Animation</h3>
+          <p>An original frame-by-frame animation of a sailboat on rough seas, with independently animated rain, waves, lightning, and clouds.</p>
+          <div class="project-links">
+            <a href="https://denvabeaubrun.github.io/cisc3610-portfolio/Wick/" target="_blank" rel="noopener">Live Demo</a>
+            <a href="https://github.com/denvabeaubrun/cisc3610-portfolio/tree/main/Wick" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </article>
       </div>
-      <h3>Hannah Montana Resume</h3>
-      <p>A pop star inspired website of Hannah's resume including components like carousel and nav bar from bootstrap.</p>
-      <div class="project-links">
-
-    <a href="https://denvabeaubrun.github.io/cisc3610-portfolio/Resume%20Lab/" target="_blank">
-      Live Demo
-    </a>
-
-    <a href="https://github.com/denvabeaubrun/cisc3610-portfolio/tree/main/Resume%20Lab" target="_blank">
-      GitHub
-    </a>
-
+    </section>
   </div>
-    </div>
-
-    <div class="project-card">
-      <div class="image-wrapper">
-
-    <div class="tape tape3 tape-blue"></div>
-       <img src="studyo-site.png" alt="Studyo website screenshot">
-      </div>
-      <h3>Studyo - AI powered study tool</h3>
-      <p>Website made for students. Flsashcards are created from a student's uplaoded notes, students can play games and study using pomodoro. </p>
-      <div class="project-links">
-
-    <a href="https://denvabeaubrun.github.io/Studyo/" target="_blank">
-      Live Demo
-    </a>
-
-    <a href="https://github.com/denvabeaubrun/atlas-dashboard" target="_blank">
-      GitHub
-    </a>
-
-  </div>
-    </div>
-
-    <div class="project-card">
-  <div class="image-wrapper">
-    <div class="tape tape4 tape-green"></div>
-    <img src="wick.gif" alt="Stormy seascape animation with sailboat, rain, and lightning made in Wick Editor">
-  </div>
-  <h3>Wick Editor Animation</h3>
-  <p>An original frame-by-frame animation made in Wick Editor. A sailboat on rough seas under a thunderstorm, with independently animated rain, waves, lightning, and clouds.</p>
-  <div class="project-links">
-    <a href="https://denvabeaubrun.github.io/cisc3610-portfolio/Wick/" target="_blank">
-      Live Demo
-    </a>
-    <a href="https://github.com/denvabeaubrun/cisc3610-portfolio/tree/main/Wick" target="_blank">
-      GitHub
-    </a>
-  </div>
-</div>
-  </div>
-
-</div>
 </div>
 
 </body>
 </html>
-
